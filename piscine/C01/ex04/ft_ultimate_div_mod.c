@@ -8,7 +8,7 @@ void	ft_ultimate_div_mod(int *a, int *b)
 	*a = *a / *b;
 	*b = tmp % *b;
 }
-
+/*
 int	main(void)
 {
 	int	c;
@@ -19,3 +19,4 @@ int	main(void)
 	ft_ultimate_div_mod(&c, &d);
 	printf("%d = 2 / 5 et %d = 2 mod 5", c, d);
 }
+*/

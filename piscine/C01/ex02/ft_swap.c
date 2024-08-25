@@ -9,7 +9,7 @@ void	ft_swap(int *a, int *b)
 	*a = *b;
 	*b = tmp;
 }
-
+/*
 int	main(void)
 {
 	int	c;
@@ -21,3 +21,4 @@ int	main(void)
 	ft_swap(&c, &d);
 	printf(" the new value of c = %d and d = %d \n", c, d);
 }
+*/

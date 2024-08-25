@@ -5,7 +5,7 @@ void	ft_ultimate_ft(int *********nbr)
 {
 	*********nbr = 42;
 }
-
+/*
 int	main(void)
 {
 	int	a;
@@ -32,3 +32,4 @@ int	main(void)
 	ft_ultimate_ft(n9);
 	printf("the value of a is now %d", a);
 }
+*/

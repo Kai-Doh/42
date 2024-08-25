@@ -4,7 +4,7 @@ void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
-
+/*
 int	main(void)
 {
 	int	a;
@@ -15,3 +15,4 @@ int	main(void)
 	ft_ft(&a);
 	printf("Value of a after: %d", a);
 }
+*/

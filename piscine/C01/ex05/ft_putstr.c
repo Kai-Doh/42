@@ -9,7 +9,7 @@ void	ft_putstr(char *str)
 		str++;
 	}
 }
-
+/*
 int	main(void)
 {
 	char	*c;
@@ -18,7 +18,7 @@ int	main(void)
 	ft_putstr(c);
 }
 
-/* in this exercise there is a close link between pointers of char and strings,
- * strings is an array of characters that is stored in a char. by using a pointer *str to a string in this case *c then
- * we can move to which character we would like to go with an str++ in the function putstr
- */
+* in this exercise there is a close link between pointers of char and strings,
+* strings is an array of characters that is stored in a char. by using a pointer *str to a string in this case *c then
+* we can move to which character we would like to go with an str++ in the function putstr
+*/
