@@ -9,24 +9,45 @@
 /*   Updated: 2024/08/26 09:45:02 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*
+#include <stdio.h>
+#include <string.h>
+*/
+int	ft_strlen(char *str)
+{
+	unsigned int	indexstr;
+
+	indexstr = 0;
+	while (str[indexstr])
+	{
+		indexstr++;
+	}
+	return (indexstr);
+}
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	unsigned int	i;
-	unsigned int	s;
+	unsigned int	indexd;
+	unsigned int	indexs;
 
-	i = 0;
-	s = 0;
-	while (dest[i] != '\0')
+	indexd = ft_strlen(dest);
+	indexs = 0;
+	while (indexs < nb && src[indexs])
 	{
-		i++;
+		dest[indexd + indexs] = src[indexs];
+		indexs++;
 	}
-	while (s < nb && src[s] != '\0')
-	{
-		dest[i] = src[s];
-		i++;
-		s++;
-	}
-	dest[i] = '\0';
+	dest[indexd + indexs] = '\0';
 	return (dest);
 }
+/*
+int	main(void)
+{
+	char	dest[15];
+	char	*src;
+
+	strcpy(dest, "Hello ");
+	src = "World!";
+	printf("%s", ft_strncat(dest, src, 3));
+}
+*/
