@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr_2.c                                      :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 09:11:14 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/08/28 09:18:13 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/08/26 11:40:36 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/08/28 12:17:14 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	i;
-	int	s;
+	unsigned int	i;
+	unsigned int	s;
 
 	i = 0;
 	s = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != '\0')
+	while (dest[i] != '\0')
 	{
-		while (str[i + s] == to_find[s])
-		{
-			s++;
-			if (to_find[s] == '\0')
-				return (&str[i]);
-		}
 		i++;
-		s = 0;
 	}
-	return (0);
+	while (i < (size - 1) && src[s] != '\0')
+	{
+		dest[i + s] = src[s];
+		s++;
+	}
+	dest[i] = '\0';
+	return (i + s);
 }

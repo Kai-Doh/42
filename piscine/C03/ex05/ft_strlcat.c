@@ -6,38 +6,42 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 11:40:36 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/08/26 14:00:33 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/08/28 14:31:04 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *src)
+unsigned int	ft_strlen(char *str)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i])
 		i++;
 	return (i);
 }
+
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int	i;
-	unsigned int	s;
-	unsigned int	len;
+	unsigned int	indexd;
+	unsigned int	lengths;
+	unsigned int	indexs;
+	unsigned int	lengthd;
 
-	len = ft_strlen(dest);
-	i = 0;
-	s = 0;
-	while (dest[i] != '\0')
+	indexd = ft_strlen(dest);
+	indexs = 0;
+	lengthd = ft_strlen(dest);
+	lengths = ft_strlen(src);
+	if (size < 1)
+		return (lengths + size);
+	while (src[indexs] && (indexd < size - 1))
 	{
-		i++;
+		dest[indexd] = src[indexs];
+		indexd++;
+		indexs++;
 	}
-	while (i < (size - 1) && src[s] != '\0')
-	{
-		dest[i] = src[s];
-		i++;
-		s++;
-	}
-	dest[i] = '\0';
-	return (len + ft_strlen(src));
+	dest[indexd] = '\0';
+	if (size < lengthd)
+		return (lengths + size);
+	else
+		return (lengthd + lengths);
 }
