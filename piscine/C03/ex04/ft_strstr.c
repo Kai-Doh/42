@@ -1,15 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr_2.c                                      :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 09:11:14 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/08/28 09:18:13 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:04:52 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+#include <stdio.h>
+#include <string.h>
+*/
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
@@ -32,3 +35,14 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	return (0);
 }
+/*
+int	main(void)
+{
+	char	str[15];
+	char	to_find[4];
+
+	strcpy(str, "skenddofdegdog");
+	strcpy(to_find, "dog");
+	printf("%s", ft_strstr(str, to_find));
+}
+*/
