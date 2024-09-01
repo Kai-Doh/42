@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 22:07:18 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/01 22:11:56 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/01 22:35:36 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	ft_iterative_power(int nb, int power)
 	while (i < power)
 	{
 		result = result * nb;
+		i++;
 	}
 	return (result);
 }
