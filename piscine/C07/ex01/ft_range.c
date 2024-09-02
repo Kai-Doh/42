@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 00:13:19 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/03 00:25:57 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/09/03 00:21:45 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/09/03 00:22:41 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int    *ft_range(int min, int max)
 {
-	write (1, &c, 1);
-}
+    int	*range;
+    int	i;
 
-void	ft_print_alphabet(void)
-{
-	char	a;
-
-	a = 97;
-	while (a < 123)
-	{
-		ft_putchar(a);
-		a++;
-	}
+    if (min >= max)
+        return (0);
+    range = (int *)malloc(sizeof(int) * (max - min));
+    if (range == 0)
+        return (0);
+    i = 0;
+    while (min < max)
+    {
+        range[i] = min;
+        min++;
+        i++;
+    }
+    return (range);
 }
-/*
-int	main(void)
-{
-	ft_print_alphabet();
-}
-*/
