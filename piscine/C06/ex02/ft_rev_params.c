@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 10:53:23 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/08/30 11:35:21 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/04 12:03:31 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar(char c)
 {
-	write (1, &c ,1);
+	write (1, &c, 1);
 }
 
 int	main(int argc, char *argv[])
@@ -38,5 +38,4 @@ int	main(int argc, char *argv[])
 		ft_putchar('\n');
 		j--;
 	}
-
 }

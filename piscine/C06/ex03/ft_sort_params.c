@@ -6,13 +6,13 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 11:50:33 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/02 08:27:06 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/04 12:55:59 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c);
+void	ft_putchar(char c);
 
 char	ft_strcmp(char *s1, char *s2)
 {
@@ -26,24 +26,28 @@ char	ft_strcmp(char *s1, char *s2)
 	return (*s1 - *s2);
 }
 
+void	ft_swap(char **s1, char **s2)
+{
+	char	*temp;
+
+	temp = *s1;
+	*s1 = *s2;
+	*s2 = temp;
+}
+
 void	ft_sort_params(int argc, char **argv)
 {
-	int i;
-	int j;
-	char *temp;
+	int		i;
+	int		j;
+
 	i = 1;
 	while (i < argc)
 	{
-		j = i + 1;
-		while (j < argc)
+		j = i;
+		while (j++ < argc - 1)
 		{
 			if (ft_strcmp(argv[i], argv[j]) > 0)
-			{
-				temp = argv[i];
-				argv[i] = argv[j];
-				argv[j] = temp;
-			}
-			j++;
+				ft_swap(&argv[i], &argv[j]);
 		}
 		i++;
 	}
@@ -62,7 +66,7 @@ void	ft_sort_params(int argc, char **argv)
 
 void	ft_putchar(char c)
 {
-	write (1 , &c, 1);
+	write (1, &c, 1);
 }
 
 int	main(int argc, char **argv)
