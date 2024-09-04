@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 11:29:28 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/03 14:38:22 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/04 18:27:20 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ int	ft_malloc(int size, char **strs, char *sep)
 
 	count = 0;
 	j = 0;
-	while (j++ < size - 1)
+	while (j++ < size)
 	{
 		count = count + ft_strlen(strs[j]);
-		if (j < size - 1)
+		if (j < size)
 		count = count + ft_strlen(sep);
 	}
 	return (count);
@@ -52,15 +52,15 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	dest = (char *)malloc(sizeof(char) * count + 1);
 	if (dest == NULL)
 		return (NULL);
-	j = 0;
+	j = 1;
 	k = 0;
-	while (j < size)
+	while (j < size + 1)
 	{
 		i = 0;
 		while (strs[j][i])
 			dest[k++] = strs[j][i++];
 		i = 0;
-		while (sep[i] && j < size - 1)
+		while (sep[i] && j < size)
 			dest[k++] = sep[i++];
 		j++;
 	}
@@ -74,8 +74,9 @@ int	main(int argc, char **argv)
 {
 	char *sep;
 
-	sep = "sep";
-	if (argc != 0)
-		printf("%s", ft_strjoin(argc, argv, sep));
+	sep = " ";
+	if (argc != 1)
+		printf("%s", ft_strjoin(1, argv, sep));
+	free(ft_strjoin(argc, argv, sep));
 }
 */

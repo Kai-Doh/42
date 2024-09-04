@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 10:53:23 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/04 12:03:31 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/04 16:44:03 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	main(int argc, char *argv[])
 	int	i;
 	int	j;
 
+	if (argc == 1)
+		return (0);
 	j = 1;
 	while (j < (argc - 1))
 	{
