@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/08 15:01:19 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/08 15:11:45 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/09/08 15:02:35 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/09/08 15:25:45 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <ft.h>
 
-void	ft_putstr(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
+	int	index;
 
-	i = 0;
-	while (str[i])
+	index = 0;
+	while (s1[index] == s2[index] && (s1[index] || s2[index]))
 	{
-		write (1, &str[i], 1);
-		i++;
+		index++;
 	}
+	return (s1[index] - s2[index]);
 }
