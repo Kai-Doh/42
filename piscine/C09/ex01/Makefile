@@ -1,9 +1,40 @@
-SRCS = srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strcmp.c srcs/ft_strlen.c srcs/ft_swap.c
-OBJECTS = $(SRCS:.c=.o)
-INCLUDES = includes
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/09/08 17:47:57 by ktiomico          #+#    #+#              #
+#    Updated: 2024/09/08 17:50:17 by ktiomico         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
-LIBC = ar rc
-LIBR = ranlib
-CC = CC
-RM = rm -f
-CFLAGS = -Wall -Werror -Wextra
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+AR = ar rc
+RM = rm -rf
+
+SOURCES =	srcs/ft_putchar.c \
+			srcs/ft_swap.c \
+			srcs/ft_putstr.c \
+			srcs/ft_strlen.c \
+			srcs/ft_strcmp.c \
+
+OBJECTS = $(sources:.c=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJECTS)
+	@$(AR) $@ $(OBJECTS)
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+clean:
+	@$(RM) $(OBJECTS)
+fclean: clean
+	@$(RM) $(NAME)
+re: fclean all
+
+.PHONY: all clean fclean re
