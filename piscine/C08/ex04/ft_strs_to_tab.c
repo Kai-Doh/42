@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 09:13:36 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/08 13:29:55 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/08 13:39:42 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 
 int	main(int ac, char **av)
 {
-	t_stock_str *tab;
+	t_stock_str	*tab;
 
 	tab = ft_strs_to_tab(ac, av);
 	ft_show_tab(tab);
