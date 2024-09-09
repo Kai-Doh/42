@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 09:13:36 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/09 17:14:32 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/09 22:58:54 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,23 +50,23 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	int			i;
 	t_stock_str	*tab;
 
-	i = 0;
 	tab = malloc(sizeof(t_stock_str) * (ac + 1));
 	if (tab == NULL)
-	{
-		free (tab);
 		return (NULL);
-	}
-	while (++i < ac)
+	i = 0;
+	while (i < ac)
 	{
 		tab[i].size = ft_strlen(av[i]);
 		tab[i].str = av[i];
 		tab[i].copy = ft_strdup(av[i]);
 		if (tab[i].copy == NULL)
 		{
-			free (tab[i].copy);
+			while (i-- >= 0)
+				free (tab[i].copy);
+			free(tab);
 			return (NULL);
 		}
+		i++;
 	}
 	tab[i].size = 0;
 	tab[i].str = 0;
@@ -79,6 +79,11 @@ int	main(int ac, char **av)
 	t_stock_str	*tab;
 
 	tab = ft_strs_to_tab(ac, av);
+	if (tab == NULL)
+	{
+		return (1);
+	}
 	ft_show_tab(tab);
 	free(tab);
+	return (0);
 }
