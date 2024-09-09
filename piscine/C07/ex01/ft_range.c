@@ -6,9 +6,11 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 00:21:45 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/03 14:55:42 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/09 16:40:21 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 int	*ft_range(int min, int max)
 {
@@ -22,6 +24,7 @@ int	*ft_range(int min, int max)
 		return (0);
 	i = 0;
 	while (min < max)
-		range[i++] = min++;
+		range[i] = min++;
+		i++;
 	return (range);
 }
