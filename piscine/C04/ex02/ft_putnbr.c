@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 12:25:07 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/08/27 13:21:01 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/09 23:27:43 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,32 +19,29 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
+	if (nb == -2147483648)
+	{
+		write (1, "-2147483648", 12);
+		return;
+	}
 	if (nb < 0)
 	{
 		ft_putchar('-');
 		nb = -1 * nb;
 	}
-	if (nb == -2147483648)
-	{
-		write (1, "2147483648", 12);
-	}
-	if (nb < 10)
-	{
-		ft_putchar(nb + 48);
-	}
 	if (nb >= 10)
 	{
 	  ft_putnbr(nb / 10);
 	}
-  ft_putchar(nb % 10 +48);
+  ft_putchar(nb % 10 + '0');
+  return;
 }
-
 /*
 int	main()
 {
 	int	i;
 
-	i = 2341;
+	i = 123;
 	ft_putnbr(i);
 }
 */
