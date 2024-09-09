@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 09:13:36 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/08 13:39:42 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/09 17:14:32 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ char	*ft_strdup(char *src)
 	i = 0;
 	dest = malloc(sizeof(char) * (ft_strlen(src) + 1));
 	if (dest == NULL)
+	{
+		free (dest);
 		return (NULL);
+	}
 	while (src[i])
 	{
 		dest[i] = src[i];
@@ -50,15 +53,20 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	i = 0;
 	tab = malloc(sizeof(t_stock_str) * (ac + 1));
 	if (tab == NULL)
+	{
+		free (tab);
 		return (NULL);
-	while (i < ac)
+	}
+	while (++i < ac)
 	{
 		tab[i].size = ft_strlen(av[i]);
 		tab[i].str = av[i];
 		tab[i].copy = ft_strdup(av[i]);
 		if (tab[i].copy == NULL)
+		{
+			free (tab[i].copy);
 			return (NULL);
-		i++;
+		}
 	}
 	tab[i].size = 0;
 	tab[i].str = 0;
@@ -72,4 +80,5 @@ int	main(int ac, char **av)
 
 	tab = ft_strs_to_tab(ac, av);
 	ft_show_tab(tab);
+	free(tab);
 }
