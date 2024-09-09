@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 00:14:43 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/03 00:25:57 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/10 00:10:41 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	main(void)
 }
 
 * in this exercise there is a close link between pointers of char and strings,
-* strings is an array of characters that is stored in a char. by using a pointer *str to a string in this case *c then
-* we can move to which character we would like to go with an str++ in the function putstr
+* strings is an array of characters that is stored in a char. by using a
+* pointer *str to a string in this case *c then
+* we can move to which character we would like to go with an str++ in
+* the function putstr
 */

@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 23:17:58 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/09 23:34:52 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/10 00:05:10 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ void	ft_putchar(char c)
 {
 	write (1, &c, 1);
 }
+
 void	ft_putout(int nb, int *tab, int pos)
 {
-	int i;
+	int	i;
 
 	if (pos == 1)
 	{
@@ -35,8 +36,8 @@ void	ft_putout(int nb, int *tab, int pos)
 
 void	ft_print_combn_increment(int nb, int *tab)
 {
-	int i;
-	int max;
+	int	i;
+	int	max;
 
 	i = nb - 1;
 	max = 9;
@@ -55,8 +56,8 @@ void	ft_print_combn_increment(int nb, int *tab)
 
 void	ft_print_combn(int nb)
 {
-	int tab[10];
-	int i;
+	int	tab[10];
+	int	i;
 
 	i = 0;
 	while (i < nb)
