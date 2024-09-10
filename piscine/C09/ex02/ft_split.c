@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 22:53:39 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/10 23:42:52 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/10 23:54:45 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	**ft_split(char *str, char *charset)
 	int		words;
 
 	if (str == NULL || charset == NULL)
-        return (NULL);
+		return (NULL);
 	words = count_words(str, charset);
-	res = (char**)malloc(sizeof(char*) * (words + 1));
+	res = malloc (sizeof(char *) * (words + 1));
 	if (res == NULL)
 		return (NULL);
 	res[words] = 0;
@@ -31,7 +31,7 @@ char	**ft_split(char *str, char *charset)
 	return (res);
 }
 
-int		char_sep(char c, char *charset)
+int	char_sep(char c, char *charset)
 {
 	int	i;
 
@@ -47,7 +47,7 @@ int		char_sep(char c, char *charset)
 	return (0);
 }
 
-int		count_words(char *str, char *charset)
+int	count_words(char *str, char *charset)
 {
 	int	i;
 	int	words;
@@ -57,7 +57,7 @@ int		count_words(char *str, char *charset)
 	while (str[i] != '\0')
 	{
 		if (char_sep(str[i + 1], charset) == 1
-				&& char_sep(str[i], charset) == 0)
+			&& char_sep(str[i], charset) == 0)
 			words++;
 		i++;
 	}
@@ -94,14 +94,14 @@ void	write_split(char **split, char *str, char *charset)
 			j = 0;
 			while (char_sep(str[i + j], charset) == 0)
 				j++;
-			split[word] = (char*)malloc(sizeof(char) * (j + 1));
+			split[word] = malloc (sizeof(char) * (j + 1));
 			dup_word(split[word], str + i, charset);
 			i = i + j;
 			word++;
 		}
 	}
 }
-
+/*
 #include <stdio.h>
 
 int main(void)
@@ -125,3 +125,4 @@ int main(void)
 
     return 0;
 }
+*/
