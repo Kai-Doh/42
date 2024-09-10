@@ -6,7 +6,7 @@
 #    By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/08 17:47:57 by ktiomico          #+#    #+#              #
-#    Updated: 2024/09/08 17:50:17 by ktiomico         ###   ########.fr        #
+#    Updated: 2024/09/10 23:35:04 by ktiomico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SOURCES =	srcs/ft_putchar.c \
 			srcs/ft_strlen.c \
 			srcs/ft_strcmp.c \
 
-OBJECTS = $(sources:.c=.o)
+OBJECTS = $(SOURCES:.c=.o)
 
 all: $(NAME)
 
