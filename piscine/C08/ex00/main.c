@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/07 20:56:02 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/10 10:44:11 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/09/10 11:27:11 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/09/10 11:36:27 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+#include <stdio.h>
+#include "ft.h"
 
-typedef struct s_point
+int	main(void)
 {
-	int	x;
-	int	y;
-}	t_point;
-
-#endif
+	printf("ft_putchar: \n");
+	ft_putchar('d');
+}

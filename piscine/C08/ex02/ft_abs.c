@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/07 20:56:02 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/10 10:44:11 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/09/10 10:53:12 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/09/10 13:33:27 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+#include "ft_abs.h"
+#include <stdio.h>
 
-typedef struct s_point
+int	main(void)
 {
-	int	x;
-	int	y;
-}	t_point;
+	int	value;
 
-#endif
+	value = -54;
+	printf("%d", ABS(value));
+}

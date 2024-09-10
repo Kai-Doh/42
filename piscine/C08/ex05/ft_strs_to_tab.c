@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 09:13:36 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/10 10:35:21 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/10 11:38:04 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	tab[i].copy = 0;
 	return (tab);
 }
-/*
+
 int	main(int ac, char **av)
 {
 	t_stock_str	*tab;
@@ -85,4 +85,3 @@ int	main(int ac, char **av)
 	free(tab);
 	return (0);
 }
-*/
