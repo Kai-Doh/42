@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 11:29:28 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/04 22:43:00 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/12 22:20:14 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_count(int size, char **strs, char *sep)
 	int	j;
 
 	count = 0;
-	j = 0;
+	j = 1;
 	while (j < size)
 	{
 		count = count + ft_strlen(strs[j]);
@@ -55,7 +55,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	dest = (char *)malloc(sizeof(char) * count + 1);
 	if (dest == NULL)
 		return (NULL);
-	j = 0;
+	j = 1;
 	k = 0;
 	while (j < size)
 	{
@@ -70,7 +70,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	dest[k] = '\0';
 	return (dest);
 }
-/*
+
 #include <stdio.h>
 
 int	main(int argc, char **argv)
@@ -79,7 +79,6 @@ int	main(int argc, char **argv)
 
 	sep = " ";
 	if (argc != 1)
-		printf("%s", ft_strjoin(3, argv, sep));
-	free(ft_strjoin(3, argv, sep));
+		printf("%s", ft_strjoin(argc, argv, sep));
+	free(ft_strjoin(argc, argv, sep));
 }
-*/
