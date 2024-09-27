@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 14:05:25 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/27 14:15:59 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/09/27 14:20:38 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ char	*ft_itoa(int n)
 	char	*str;
 	long	num;
 
-	length = get_num_length(n);
+	length = ft_num_length(n);
 	if (n < 0)
 		sign = -1;
 	else
