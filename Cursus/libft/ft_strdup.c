@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 02:14:14 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/30 21:06:20 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/01 00:56:07 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/01 01:11:11 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+char	*ft_strdup(const char *s)
 {
-	size_t	i;
+	char	*dest;
+	size_t	length;
+	int		i;
 
+	length = ft_strlen((char *)s);
+	dest = malloc(sizeof(char) * (length + 1));
+	if (!dest)
+		return (NULL);
 	i = 0;
-	while (str[i])
+	while (s[i])
+	{
+		dest[i] = s[i];
 		i++;
-	return (i);
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 /*
-#include <stdio.h>
 int	main(void)
 {
-	char *str = "Hello";
+	char *str = "Hello.";
+	char *dup;
 
-	printf("the string str is %li of length\n", ft_strlen(str));
+	dup = ft_strdup(str);
+	printf("%s", dup);
 }
 */

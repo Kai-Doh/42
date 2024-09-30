@@ -1,32 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 02:14:14 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/30 21:06:20 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/09/30 23:07:24 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/09/30 23:23:15 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (str[i])
+	if (!*little)
+		return ((char *)big);
+	while (big[i] && i < len)
+	{
+		j = 0;
+		while (big[i + j] && little[j] && i + j < len
+			&& big[i + j] == little[j])
+		{
+			j++;
+		}
+		if (!little[j])
+			return ((char *)&big[i]);
 		i++;
-	return (i);
+	}
+	return (NULL);
 }
 /*
-#include <stdio.h>
 int	main(void)
 {
-	char *str = "Hello";
+	char	*big = "Hello";
+	char	*little = "l";
+	size_t	len = 5;
 
-	printf("the string str is %li of length\n", ft_strlen(str));
+	printf("%s\n", ft_strnstr(big, little, len));
 }
 */

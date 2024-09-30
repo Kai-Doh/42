@@ -1,32 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 02:14:14 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/30 21:06:20 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/09/30 23:26:21 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/01 01:07:50 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
+	int	i;
+	int	sign;
+	int	nb;
 
 	i = 0;
-	while (str[i])
+	sign = 1;
+	nb = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
 		i++;
-	return (i);
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = nb * 10 + (str[i] - '0');
+		i++;
+	}
+	return (nb * sign);
 }
 /*
-#include <stdio.h>
 int	main(void)
 {
-	char *str = "Hello";
-
-	printf("the string str is %li of length\n", ft_strlen(str));
+	char	*str = "  -1234";
+	printf("%d\n", ft_atoi(str));
 }
 */

@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 02:14:14 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/30 21:06:20 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/09/30 21:18:48 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/01 01:09:39 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
-{
-	size_t	i;
+#include <stdio.h>
 
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
+
+	if (!s)
+		return (NULL);
 	i = 0;
-	while (str[i])
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
 		i++;
-	return (i);
+	}
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
+	return (NULL);
 }
 /*
-#include <stdio.h>
 int	main(void)
 {
-	char *str = "Hello";
+	char	*str = "Hello";
+	char	c = 'l';
 
-	printf("the string str is %li of length\n", ft_strlen(str));
+	printf("%s\n", ft_strchr(str, c));
 }
 */

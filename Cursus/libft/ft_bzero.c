@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 02:39:38 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/09/29 02:43:55 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/01 01:06:03 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	*ft_bzero(void *s, size_t num)
 {
 	size_t	i;
-	char *str;
+	char	*str;
 
 	i = 0;
 	str = s;
 	while (i < num)
 	{
-		str[i] = 0;
+		str[i] = '0';
 		i++;
 	}
 	return (s);
