@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 23:36:02 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 00:54:02 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/01 02:41:08 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
+	if (nmemb > 429967295 / size)
+		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);

@@ -6,25 +6,24 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 02:39:38 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 01:06:03 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/01 01:57:58 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t num)
+void	ft_bzero(void *s, size_t num)
 {
 	size_t	i;
 	char	*str;
 
 	i = 0;
-	str = s;
+	str = (char *)s; // Cast the void pointer to a char pointer
 	while (i < num)
 	{
-		str[i] = '0';
+		str[i] = '\0'; // Dereference and assign the null character
 		i++;
 	}
-	return (s);
 }
 /*
 int	main(void)

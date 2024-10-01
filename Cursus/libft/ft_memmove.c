@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 02:55:02 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 01:10:54 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/01 01:25:09 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int	main(void)
     printf("Before memmove: %s\n", str);
     ft_memmove(str + 7, str, 6);
     printf("After memmove: %s\n", str);
-
     return (0);
 }
 */

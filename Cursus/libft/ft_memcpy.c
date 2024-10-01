@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 02:44:15 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 01:09:55 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/01 02:17:12 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t num)
 	size_t	i;
 
 	i = 0;
-	if (!dest && !src)
+	if (!dest && !src && num > 0)
 		return (NULL);
 	if (dest != src)
 	{
