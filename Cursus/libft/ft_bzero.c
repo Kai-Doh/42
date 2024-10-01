@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 02:39:38 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 01:57:58 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:56:55 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ft_bzero(void *s, size_t num)
 	char	*str;
 
 	i = 0;
-	str = (char *)s; // Cast the void pointer to a char pointer
+	str = (char *)s;
 	while (i < num)
 	{
-		str[i] = '\0'; // Dereference and assign the null character
+		str[i] = '\0';
 		i++;
 	}
 }
