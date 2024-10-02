@@ -6,7 +6,7 @@
 #    By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/01 01:12:25 by ktiomico          #+#    #+#              #
-#    Updated: 2024/10/02 22:20:52 by ktiomico         ###   ########.fr        #
+#    Updated: 2024/10/02 23:04:34 by ktiomico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,11 @@ SRCS =	ft_atoi.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
+
+SRCS_BONUS =
+
 OBJS = $(SRCS:.c=.o)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I.
@@ -58,12 +62,20 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+bonus: $(NAME)
+
+$(NAME): $(OBJS_BONUS)
+	ar rc $(NAME) $(OBJS_BONUS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
