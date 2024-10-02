@@ -6,7 +6,7 @@
 #    By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/01 01:12:25 by ktiomico          #+#    #+#              #
-#    Updated: 2024/10/01 15:50:13 by ktiomico         ###   ########.fr        #
+#    Updated: 2024/10/02 22:20:52 by ktiomico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,14 @@ SRCS =	ft_atoi.c \
 		ft_substr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
-		ft_split.c
+		ft_split.c \
+		ft_itoa.c \
+		ft_strmapi.c \
+		ft_striteri.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c
 OBJS = $(SRCS:.c=.o)
 NAME = libft.a
 CC = gcc

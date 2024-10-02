@@ -6,95 +6,105 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:45:39 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 16:05:59 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/01 23:21:59 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-// Helper function to calculate the length of a string
-int ft_strlen(const char *str) {
-    int len = 0;
-    while (str[len] != '\0') {
-        len++;
-    }
-    return len;
+static void	ft_free_tab(char **tab, size_t j)
+{
+	while (j--)
+		free(tab[j]);
+	free(tab);
 }
 
-// Helper function to count the number of words separated by the delimiter
-int count_words(const char *str, char delimiter) {
-    int count = 0;
-    int i = 0;
-    int in_word = 0;
+static size_t	ft_wordcount(const char *s, char c)
+{
+	size_t	count;
+	int		in_word;
 
-    while (str[i] != '\0') {
-        if (str[i] == delimiter) {
-            if (in_word) {
-                in_word = 0;
-            }
-        } else if (!in_word) {
-            in_word = 1;
-            count++;
-        }
-        i++;
-    }
-    return count;
-}
-
-// Helper function to allocate and copy a substring
-char *ft_substr(const char *str, int start, int length) {
-    char *substr = (char *)malloc((length + 1) * sizeof(char));
-    int i = 0;
-
-    if (!substr)
-        return NULL;
-
-    while (i < length) {
-        substr[i] = str[start + i];
-        i++;
-    }
-    substr[i] = '\0';
-    return substr;
-}
-
-// Main split function
-char **ft_split(const char *str, char delimiter) {
-    int i = 0;
-    int j = 0;
-    int k = 0;
-    int start = 0;
-    int word_count = count_words(str, delimiter);
-    char **result = (char **)malloc((word_count + 1) * sizeof(char *));
-
-    if (!result)
-        return NULL;
-
-    while (str[i] != '\0') {
-        if (str[i] == delimiter) {
-            if (i > start) {
-                result[k++] = ft_substr(str, start, i - start);
-            }
-            start = i + 1;
-        }
-        i++;
-    }
-
-    if (i > start) {
-        result[k++] = ft_substr(str, start, i - start);
-    }
-
-    result[k] = NULL;
-    return result;
-}
-
-int main(void) {
-	char *str = "Hello,world,!";
-	char **tokens = ft_split(str, ',');
-	int i = 0;
-	while (tokens[i] != NULL) {
-		printf("%s\n", tokens[i]);
-		i++;
+	count = 0;
+	in_word = 0;
+	while (*s)
+	{
+		if (*s != c && !in_word)
+		{
+			in_word = 1;
+			count++;
+		}
+		else if (*s == c)
+			in_word = 0;
+		s++;
 	}
-	return 0;
+	return (count);
 }
+
+static char	*ft_allocate_word(const char *s, char c, size_t *index)
+{
+	size_t	start;
+	size_t	len;
+	char	*word;
+
+	while (s[*index] && s[*index] == c)
+		(*index)++;
+	start = *index;
+	while (s[*index] && s[*index] != c)
+		(*index)++;
+	len = *index - start;
+	word = malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
+	ft_strlcpy(word, s + start, len + 1);
+	return (word);
+}
+
+static int	ft_fill_tab(char **tab, const char *s, char c)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			tab[j] = ft_allocate_word(s, c, &i);
+			if (!tab[j++])
+				return (ft_free_tab(tab, j), 0);
+		}
+		else
+			i++;
+	}
+	tab[j] = NULL;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**tab;
+	size_t	word_count;
+
+	if (!s)
+		return (NULL);
+	word_count = ft_wordcount(s, c);
+	tab = malloc((word_count + 1) * sizeof(char *));
+	if (!tab)
+		return (NULL);
+	if (!ft_fill_tab(tab, s, c))
+		return (NULL);
+	return (tab);
+}
+/*
+int	main(void)
+{
+	char	**tab;
+	char	*str = "Hello World!";
+	char	c = ' ';
+
+	tab = ft_split(str, c);
+	while (*tab)
+		printf("%s\n", *tab++);
+}
+*/

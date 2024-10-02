@@ -1,47 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 11:49:38 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 23:09:23 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/02 11:05:04 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/02 11:32:37 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	strlen;
-	size_t	end;
-	char	*substr;
+	char	*result;
+	size_t	i;
+	size_t	length;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
-	strlen = ft_strlen(s);
-	end = 0;
-	if (start < strlen)
-		end = strlen - start;
-	if (end > len)
-		end = len;
-	substr = malloc(sizeof(char) * (end + 1));
-	if (!substr)
+	length = ft_strlen(s);
+	result = malloc(sizeof(char) * length + 1);
+	if (!result)
 		return (NULL);
-	ft_strlcpy(substr, s + start, end + 1);
-	return (substr);
+	i = 0;
+	while (s[i])
+	{
+		result[i] = f(i, s[i]);
+		i++;
+	}
+	result[i] = '\0';
+	return (result);
 }
 /*
 int	main(void)
 {
 	char	*str;
-	char	*substr;
-	unsigned int	start = 2;
-	size_t	len = 5;
+    char	*result;
 
-	str = "Hello World!";
-	substr = ft_substr(str, start, len);
-	printf("%s", substr);
+    str = "Hello";
+    result = ft_strmapi(str, ft_toupper);
+    if (result)
+    {
+        printf("%s\n", result);
+        free(result);
+    }
+    return (0);
 }
 */
