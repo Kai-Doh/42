@@ -1,3 +1,6 @@
 [submodule "Piscine"]
 	path = Piscine
 	url = https://github.com/Kai-Doh/Piscine
+[submodule "Libft"]
+	path = Libft
+	url = https://github.com/Kai-Doh/Libft.git
