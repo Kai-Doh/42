@@ -6,7 +6,7 @@
 #    By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/01 01:12:25 by ktiomico          #+#    #+#              #
-#    Updated: 2024/10/02 23:04:34 by ktiomico         ###   ########.fr        #
+#    Updated: 2024/10/03 17:28:48 by ktiomico         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,36 +45,47 @@ SRCS =	ft_atoi.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
-SRCS_BONUS =
+SRCS_BONUS =	ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstmap.c
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+
 NAME = libft.a
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I.
+
 RM = rm -rf
+AR = ar rc
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+	@$(AR) $(NAME) $(OBJS)
+	@echo "Library $(NAME) created."
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(NAME)
-
-$(NAME): $(OBJS_BONUS)
-	ar rc $(NAME) $(OBJS_BONUS)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+bonus: $(OBJS) $(OBJS_BONUS)
+	@$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
+	@echo "Library $(NAME) with bonus created."
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	@$(RM) $(OBJS) $(OBJS_BONUS)
+	@echo "Object files removed."
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "Library $(NAME) and object files removed."
 
 re: fclean all
 

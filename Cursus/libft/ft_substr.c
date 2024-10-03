@@ -6,7 +6,7 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:49:38 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 23:09:23 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/03 14:24:38 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	strlen = ft_strlen(s);
 	end = 0;
+	if (start >= strlen)
+	{
+		substr = malloc(sizeof(char));
+		if (!substr)
+			return (NULL);
+		substr[0] = '\0';
+		return (substr);
+	}
 	if (start < strlen)
 		end = strlen - start;
 	if (end > len)
