@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 21:18:48 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/03 14:27:23 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/03 14:11:16 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/03 15:56:28 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-
-char	*ft_strchr(const char *s, int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return (NULL);
+	new->next = *lst;
+	*lst = new;
 }
 /*
+#include <stdio.h>
 int	main(void)
 {
-	char	*str = "Hello";
-	char	c = 'l';
+	t_list	*lst;
+	t_list	*new;
 
-	printf("%s\n", ft_strchr(str, c));
+	lst = ft_lstnew("Hello");
+	new = ft_lstnew("World");
+	ft_lstadd_front(&lst, new);
+	printf("%s\n", lst->content);
 }
 */

@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 21:18:48 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/03 14:27:23 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/03 17:21:43 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/03 17:27:04 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-
-char	*ft_strchr(const char *s, int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
+	while (lst)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
+		(f)(lst->content);
+		lst = lst->next;
 	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return (NULL);
 }
-/*
-int	main(void)
-{
-	char	*str = "Hello";
-	char	c = 'l';
-
-	printf("%s\n", ft_strchr(str, c));
-}
-*/

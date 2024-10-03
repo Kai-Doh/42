@@ -6,13 +6,13 @@
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 02:44:15 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/01 02:17:12 by ktiomico         ###   ########.fr       */
+/*   Updated: 2024/10/03 12:29:39 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t num)
+void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t num)
 {
 	size_t	i;
 

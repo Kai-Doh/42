@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 21:18:48 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/03 14:27:23 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/03 17:24:47 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/03 18:03:34 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-
-char	*ft_strchr(const char *s, int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	i;
+	t_list	*null;
+	t_list	*temp;
 
-	i = 0;
-	while (s[i])
+	if (!lst || !f)
+		return (NULL);
+	null = NULL;
+	while (lst)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
+		temp = ft_lstnew(f(lst->content));
+		if (!temp)
+		{
+			ft_lstclear(&null, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&null, temp);
+		lst = lst->next;
 	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return (NULL);
+	return (null);
 }
-/*
-int	main(void)
-{
-	char	*str = "Hello";
-	char	c = 'l';
-
-	printf("%s\n", ft_strchr(str, c));
-}
-*/

@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 21:18:48 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/03 14:27:23 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/03 16:58:54 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/03 17:10:58 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-
-char	*ft_strchr(const char *s, int c)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	int	i;
+	t_list	*next;
 
-	i = 0;
-	while (s[i])
+	while (*lst)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
+		next = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = next;
 	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return (NULL);
+	*lst = NULL;
 }
-/*
-int	main(void)
-{
-	char	*str = "Hello";
-	char	c = 'l';
-
-	printf("%s\n", ft_strchr(str, c));
-}
-*/

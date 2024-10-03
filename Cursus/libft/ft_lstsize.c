@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 21:18:48 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/03 14:27:23 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/03 15:22:18 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/03 15:47:10 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-
-char	*ft_strchr(const char *s, int c)
+int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	int	size;
 
-	i = 0;
-	while (s[i])
+	size = 0;
+	while (lst)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
+		lst = lst->next;
+		size++;
 	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return (NULL);
+	return (size);
 }
 /*
+#include <stdio.h>
 int	main(void)
 {
-	char	*str = "Hello";
-	char	c = 'l';
+	t_list	*lst;
+	t_list	*new;
+	t_list	*new2;
 
-	printf("%s\n", ft_strchr(str, c));
+	lst = ft_lstnew("Hello");
+	new = ft_lstnew("World");
+	new2 = ft_lstnew("42");
+	lst->next = new;
+	new->next = new2;
+	printf("%d\n", ft_lstsize(lst));
 }
 */

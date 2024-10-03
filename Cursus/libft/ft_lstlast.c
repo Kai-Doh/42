@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktiomico <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 21:18:48 by ktiomico          #+#    #+#             */
-/*   Updated: 2024/10/03 14:27:23 by ktiomico         ###   ########.fr       */
+/*   Created: 2024/10/03 15:34:03 by ktiomico          #+#    #+#             */
+/*   Updated: 2024/10/03 16:12:05 by ktiomico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-
-char	*ft_strchr(const char *s, int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return (NULL);
+	if (lst)
+		while (lst->next)
+			lst = lst->next;
+	return (lst);
 }
 /*
+#include <stdio.h>
 int	main(void)
 {
-	char	*str = "Hello";
-	char	c = 'l';
+	t_list	*lst;
+	t_list	*lst2;
+	t_list	*lst3;
+	t_list	*lst4;
 
-	printf("%s\n", ft_strchr(str, c));
+	lst = ft_lstnew("Hello");
+	lst2 = ft_lstnew("World");
+	lst3 = ft_lstnew("!");
+	lst4 = ft_lstnew("Bruh");
+	lst->next = lst2;
+	lst2->next = lst3;
+	lst3->next = lst4;
+	printf("%s\n", (char *)ft_lstlast(lst)->content);
 }
 */
