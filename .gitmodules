@@ -4,3 +4,6 @@
 [submodule "Libft"]
 	path = Libft
 	url = https://github.com/Kai-Doh/Libft.git
+[submodule "C-Piscine-Reloaded"]
+	path = C-Piscine-Reloaded
+	url = https://github.com/Kai-Doh/C-Piscine-Reloaded.git
