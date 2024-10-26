@@ -13,3 +13,6 @@
 [submodule "get_next_line"]
 	path = get_next_line
 	url = https://github.com/Kai-Doh/get_next_line.git
+[submodule "Push_swap"]
+	path = Push_swap
+	url = https://github.com/Kai-Doh/Push_swap.git
