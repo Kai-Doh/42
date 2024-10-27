@@ -1,18 +1,24 @@
 [submodule "Piscine"]
 	path = Piscine
-	url = https://github.com/Kai-Doh/Piscine
+	url = git@github.com:Kai-Doh/Piscine.git
+	branch = main
 [submodule "Libft"]
 	path = Libft
-	url = https://github.com/Kai-Doh/Libft.git
+	url = git@github.com:Kai-Doh/Libft.git
+	branch = main
 [submodule "C-Piscine-Reloaded"]
 	path = C-Piscine-Reloaded
-	url = https://github.com/Kai-Doh/C-Piscine-Reloaded.git
+	url = git@github.com:Kai-Doh/C-Piscine-Reloaded.git
+	branch = main
 [submodule "ft_printf"]
 	path = ft_printf
-	url = https://github.com/Kai-Doh/ft_printf.git
+	url = git@github.com:Kai-Doh/ft_printf.git
+	branch = main
 [submodule "get_next_line"]
 	path = get_next_line
-	url = https://github.com/Kai-Doh/get_next_line.git
+	url = git@github.com:Kai-Doh/get_next_line.git
+	branch = main
 [submodule "Push_swap"]
 	path = Push_swap
-	url = https://github.com/Kai-Doh/Push_swap.git
+	url = git@github.com:Kai-Doh/Push_swap.git
+	branch = main
