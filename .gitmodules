@@ -22,3 +22,7 @@
 	path = Push_swap
 	url = git@github.com:Kai-Doh/Push_swap.git
 	branch = main
+[submodule "So_long"]
+	path = So_long
+	url = git@github.com:Kai-Doh/So_long.git
+	branch = main
