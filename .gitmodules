@@ -26,3 +26,6 @@
 	path = So_long
 	url = git@github.com:Kai-Doh/So_long.git
 	branch = main
+[submodule "Minitalk"]
+	path = Minitalk
+	url = git@github.com:Kai-Doh/Minitalk.git
