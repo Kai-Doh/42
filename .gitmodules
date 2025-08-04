@@ -30,3 +30,6 @@
 	path = Minitalk
 	url = git@github.com:Kai-Doh/Minitalk.git
 	branch = main
+[submodule "minishell"]
+	path = minishell
+	url = git@github.com:Kai-Doh/minishell.git
