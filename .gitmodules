@@ -38,3 +38,7 @@
    path = philosopher
    url = git@github.com:Kai-Doh/philosopher.git
    branch = main
+[submodule "cpp 00"]
+   path = cpp00
+   url = git@github.com:Kai-Doh/cpp00.git
+   branch = main
