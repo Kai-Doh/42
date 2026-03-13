@@ -1,55 +1,55 @@
 [submodule "Piscine"]
 	path = Piscine
-	url = git@github.com:Kai-Doh/Piscine.git
+	url = https://github.com/Kai-Doh/Piscine.git
 	branch = main
 [submodule "Libft"]
 	path = Libft
-	url = git@github.com:Kai-Doh/Libft.git
+	url = https://github.com/Kai-Doh/Libft.git
 	branch = main
 [submodule "C-Piscine-Reloaded"]
 	path = C-Piscine-Reloaded
-	url = git@github.com:Kai-Doh/C-Piscine-Reloaded.git
+	url = https://github.com/Kai-Doh/C-Piscine-Reloaded.git
 	branch = main
 [submodule "ft_printf"]
 	path = ft_printf
-	url = git@github.com:Kai-Doh/ft_printf.git
+	url = https://github.com/Kai-Doh/ft_printf.git
 	branch = main
 [submodule "get_next_line"]
 	path = get_next_line
-	url = git@github.com:Kai-Doh/get_next_line.git
+	url = https://github.com/Kai-Doh/get_next_line.git
 	branch = main
 [submodule "Push_swap"]
 	path = Push_swap
-	url = git@github.com:Kai-Doh/Push_swap.git
+	url = https://github.com/Kai-Doh/Push_swap.git
 	branch = main
 [submodule "So_long"]
 	path = So_long
-	url = git@github.com:Kai-Doh/So_long.git
+	url = https://github.com/Kai-Doh/So_long.git
 	branch = main
 [submodule "Minitalk"]
 	path = Minitalk
-	url = git@github.com:Kai-Doh/Minitalk.git
+	url = https://github.com/Kai-Doh/Minitalk.git
 	branch = main
 [submodule "minishell"]
 	path = minishell
-   url = git@github.com:Kai-Doh/minishell.git
-   branch = main
+	url = https://github.com/Kai-Doh/minishell.git
+	branch = main
 [submodule "philosopher"]
-   path = philosopher
-   url = git@github.com:Kai-Doh/philosopher.git
-   branch = main
+	path = philosopher
+	url = https://github.com/Kai-Doh/philosopher.git
+	branch = main
 [submodule "cpp00"]
 	path = cpp00
-	url = git@github.com:Kai-Doh/cpp00.git
+	url = https://github.com/Kai-Doh/cpp00.git
 [submodule "cpp01"]
 	path = cpp01
-	url = git@github.com:Kai-Doh/cpp01.git
+	url = https://github.com/Kai-Doh/cpp01.git
 [submodule "cpp02"]
 	path = cpp02
-	url = git@github.com:Kai-Doh/cpp02.git
+	url = https://github.com/Kai-Doh/cpp02.git
 [submodule "cpp03"]
 	path = cpp03
-	url = git@github.com:Kai-Doh/cpp03.git
+	url = https://github.com/Kai-Doh/cpp03.git
 [submodule "cpp04"]
 	path = cpp04
-	url = git@github.com:Kai-Doh/cpp04.git
+	url = https://github.com/Kai-Doh/cpp04.git
