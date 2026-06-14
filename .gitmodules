@@ -56,3 +56,6 @@
 [submodule "minirt"]
 	path = minirt
 	url = https://github.com/Kai-Doh/minirt.git
+[submodule "cpp05"]
+	path = cpp05
+	url = https://github.com/Kai-Doh/cpp05.git
