@@ -4,3 +4,6 @@
 [submodule "cpp07"]
 	path = cpp07
 	url = /opt/data/projects/cpp07.git
+[submodule "cpp08"]
+	path = cpp08
+	url = /opt/data/projects/cpp08.git
