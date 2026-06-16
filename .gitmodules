@@ -6,4 +6,4 @@
 	url = https://github.com/Kai-Doh/cpp07.git
 [submodule "cpp06"]
 	path = cpp06
-	url = /opt/data/projects/cpp06.git
+	url = https://github.com/Kai-Doh/cpp06.git
