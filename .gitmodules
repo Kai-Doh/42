@@ -1,3 +1,6 @@
 [submodule "cpp08"]
 	path = cpp08
 	url = https://github.com/Kai-Doh/cpp08.git
+[submodule "cpp07"]
+	path = cpp07
+	url = https://github.com/Kai-Doh/cpp07.git
